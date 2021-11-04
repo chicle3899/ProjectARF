@@ -14,6 +14,8 @@ public class Menu : MonoBehaviour
     public GameObject instrucciones;
     public GameObject botoninstrucciones;
     public GameObject botonok;
+    public GameObject sobrelproyecto;
+    public GameObject quierohacerun;
 
 
     public void Start()
@@ -21,15 +23,21 @@ public class Menu : MonoBehaviour
         botonatras.SetActive(false);
         instrucciones.SetActive(false);
         botonok.SetActive(false);
-        
+        sobrelproyecto.SetActive(false);
+        quierohacerun.SetActive(false);
+
     }
 
     public void clickButton1()
     {
         Screen.orientation = ScreenOrientation.AutoRotation;
         //SceneManager.LoadScene("Informacion");
-            botonatras.SetActive(true);
-            menuobject.SetActive(false);
+        botonatras.SetActive(true);
+        menuobject.SetActive(false);
+        sobrelproyecto.SetActive(true);
+        botonsalir.SetActive(true);
+        quierohacerun.SetActive(true);
+
 
     }
 
@@ -43,6 +51,14 @@ public class Menu : MonoBehaviour
     {
         menuobject.SetActive(true);
         botonatras.SetActive(false);
+        sobrelproyecto.SetActive(false);
+        quierohacerun.SetActive(false);
+    }
+
+    public void clickButton4()
+    {
+        Application.OpenURL("https://docs.google.com/forms/d/e/1FAIpQLScfm67ndq51bKaiw9pBQ-Y57f6v5DP3lif7vXd06dQlRcxrkQ/viewform");
+        Debug.Log("is this working?");
     }
 
 
@@ -52,7 +68,9 @@ public class Menu : MonoBehaviour
         botoninstrucciones.SetActive(false);
         instrucciones.SetActive(true);
         botonok.SetActive(true);
-        
+        sobrelproyecto.SetActive(false);
+        quierohacerun.SetActive(false);
+
 
     }
 
@@ -63,10 +81,14 @@ public class Menu : MonoBehaviour
         instrucciones.SetActive(false);
         botonatras.SetActive(false);
         botonok.SetActive(false);
+        sobrelproyecto.SetActive(false);
+        quierohacerun.SetActive(false);
 
     }
 
-        public void salir()
+
+
+    public void salir()
     {
         Application.Quit();
     }
